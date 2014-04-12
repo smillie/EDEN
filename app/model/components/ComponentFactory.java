@@ -1,17 +1,41 @@
 package model.components;
 
-public interface ComponentFactory {
+public class ComponentFactory {
 
-	public Component getInflatableGreenhouse ();
+	public static Component getInflatableGreenhouse () {
+		
+		return new InflatableGreeHouse();
+		
+	}
 	
-	public Component getFlatPackedGreenHouse ();
+	public static Component getFlatPackedGreenHouse (){
 	
-	public Component getRationalisedGreenHouse ();
+		return new FlatPackedGreenHouse();
 	
-	public Component getSoilGrowingBay();
+	}
 	
-	public Component getHydroponicGrowingBay();
+	public static Component getRationalisedGreenHouse () {
+		
+		return new RationalisedGreenHouse();
+		
+	}
 	
-	public Component getAeroponicsGrowingBay();
+	public static Component getSoilGrowingBay() {
+		
+		return new SoilGrowingBay();
+		
+	}
+	
+	public static Component getHydroponicGrowingBay() {
+	
+		return new HydroponicGrowingBay();
+		
+	}
+	
+	public static Component getAeroponicsGrowingBay() {
+		
+		return new AeroponicsGrowingBay();
+		
+	}
 
 }
