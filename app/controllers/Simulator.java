@@ -1,5 +1,7 @@
 package controllers;
 
+import play.Logger;
+
 import com.google.gson.annotations.Expose;
 
 import model.Colony;
@@ -38,6 +40,7 @@ public class Simulator {
 //	}
 	
 	public static Simulator tick(Simulator simulator, int steps) {
+		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
 		
 		
