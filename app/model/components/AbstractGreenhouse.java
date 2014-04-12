@@ -1,6 +1,6 @@
 package model.components;
 
-public class AbstractGreenhouse extends AbstractComponent {	
+public abstract class AbstractGreenhouse extends AbstractComponent {	
 	
 	private static final int DEFAULT_MAX_GREENHOUSE_HEALTH = 100;
 	
@@ -16,5 +16,9 @@ public class AbstractGreenhouse extends AbstractComponent {
 		return health > 0 ? health : DEFAULT_MAX_GREENHOUSE_HEALTH;
 		
 	}
+
+
+	@Override
+	public abstract void tick(int steps);
 
 }

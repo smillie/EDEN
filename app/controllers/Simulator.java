@@ -1,16 +1,17 @@
 package controllers;
 
+import resources.ResourceManager;
+
 import com.google.gson.annotations.Expose;
 
 import model.Colony;
 import model.Environment;
-import model.LifeSupport;
 
 public class Simulator {
 
 	@Expose private Colony colony;
 	@Expose private Environment environment;
-	@Expose private LifeSupport lifeSupport;
+	@Expose private ResourceManager lifeSupport;
 	
 	public Colony getColony() {
 		return colony;
@@ -24,22 +25,24 @@ public class Simulator {
 	public void setEnvironment(Environment environment) {
 		this.environment = environment;
 	}
-	public LifeSupport getLifeSupport() {
+	public ResourceManager getLifeSupport() {
 		return lifeSupport;
 	}
-	public void setLifeSupport(LifeSupport lifeSupport) {
+	public void setLifeSupport(ResourceManager lifeSupport) {
 		this.lifeSupport = lifeSupport;
 	}
 	
-	public Simulator(Colony colony, Environment environment, LifeSupport lifeSupport){
+	public Simulator(Colony colony, Environment environment, ResourceManager lifeSupport){
+		
 		this.colony = colony;
 		this.environment = environment;
 		this.lifeSupport = lifeSupport;
+		
 	}
 	
 	public static Simulator tick(Simulator simulator, int steps) {
-		simulator.colony.tick(steps);
 		
+		simulator.colony.tick(steps);
 		
 		return simulator;
 	}

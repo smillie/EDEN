@@ -12,4 +12,10 @@ public class InflatableGreenhouse extends AbstractGreenhouse implements
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

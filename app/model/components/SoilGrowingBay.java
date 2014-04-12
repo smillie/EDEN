@@ -11,6 +11,12 @@ public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
 			  60);
 	
 	}
+
+	@Override
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	// TODO technical details
 	// TODO growing rules
