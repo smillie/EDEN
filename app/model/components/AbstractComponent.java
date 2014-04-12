@@ -3,16 +3,43 @@ package model.components;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
+
 public abstract class AbstractComponent implements Component {
+
+	public List<Component> getChildComponents() {
+		return childComponents;
+	}
+
+
+	public void setChildComponents(List<Component> childComponents) {
+		this.childComponents = childComponents;
+	}
+
+
+	public int getCurrentHealth() {
+		return currentHealth;
+	}
+
+
+	public void setCurrentHealth(int currentHealth) {
+		this.currentHealth = currentHealth;
+	}
+
+
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+
 
 	private final int DEFAULT_MAX_HEALTH = 10;
 	
-	private List<Component> childComponents;
+	@Expose private List<Component> childComponents;
 	
-	private final String name;
-	private final String description;
-	private final int maxHealth;
-	private int currentHealth;
+	@Expose private final String name;
+	@Expose private final String description;
+	@Expose private final int maxHealth;
+	@Expose private int currentHealth;
 	
 	
 	public AbstractComponent (String name, String description, int maxHealth) {

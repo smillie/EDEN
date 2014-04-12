@@ -59,7 +59,6 @@ public class Colony {
 		
 	}
 	
-	
 	public void removeComponent(Component component, String parent) {
 		//TODO
 	}

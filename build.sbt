@@ -6,7 +6,8 @@ libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
-  "com.google.code.gson" % "gson" % "2.2"
+  "com.google.code.gson" % "gson" % "2.2",
+  "org.reflections" % "reflections" % "0.9.9-RC1"
 )     
 
 play.Project.playJavaSettings

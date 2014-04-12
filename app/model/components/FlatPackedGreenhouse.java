@@ -1,6 +1,8 @@
 package model.components;
 
-public class FlatPackedGreenhouse extends AbstractGreenhouse {
+import model.Placeable;
+
+public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeable {
 
 	public FlatPackedGreenhouse() {
 		super("Flat Packed Greenhouse",
