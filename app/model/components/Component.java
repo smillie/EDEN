@@ -16,5 +16,9 @@ public interface Component {
 	
 	public List<Component> getChildren();
 
-	public boolean addComponent(Component component, String parent);
+	public boolean addComponent (Component component, String parent);
+	
+	public void removeComponent (Component component);
+
+	public void tick (int steps);
 }

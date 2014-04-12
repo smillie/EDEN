@@ -11,6 +11,12 @@ public class HydroponicGrowingBay extends AbstractGrowingBay implements Placeabl
 			   40);
 		
 	}
+
+	@Override
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	// TODO technical details
 	// TODO growing rules

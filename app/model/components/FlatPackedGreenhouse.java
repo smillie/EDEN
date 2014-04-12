@@ -9,6 +9,12 @@ public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeabl
 			  "A sturdy greenhouse made of rigid panels",
 			  100);
 	}
+
+	@Override
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	//TODO technical background
 	//TODO growing rules

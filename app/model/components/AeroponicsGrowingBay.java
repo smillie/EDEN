@@ -9,6 +9,12 @@ public class AeroponicsGrowingBay extends AbstractGrowingBay implements Placeabl
 			  "Plants grow in air",
 			   30);
 	}
+
+	@Override
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	//TODO - technical description
 	//TODO - growing methods

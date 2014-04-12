@@ -3,10 +3,40 @@ package model.components;
 import java.util.ArrayList;
 import java.util.List;
 
+import resources.BasicResourceManager;
+import resources.ResourceManager;
+
+import model.ConcreteEnvironment;
+import model.Environment;
+
 import com.google.gson.annotations.Expose;
 
 public abstract class AbstractComponent implements Component {
 
+	private final int DEFAULT_MAX_HEALTH = 10;
+	private ResourceManager resources;
+	private Environment environment;
+	
+	@Expose private List<Component> childComponents;
+	@Expose private final String name;
+	@Expose private final String description;
+	@Expose private final int maxHealth;
+	@Expose private int currentHealth;
+	
+	
+	public AbstractComponent (String name, String description, int maxHealth) {
+		
+		childComponents = new ArrayList<Component>();
+		resources = BasicResourceManager.getInstance();
+		environment = ConcreteEnvironment.getInstance();
+		
+		this.name = name;
+		this.description = description;
+		this.maxHealth = (maxHealth < DEFAULT_MAX_HEALTH) ? DEFAULT_MAX_HEALTH : maxHealth;
+		currentHealth = this.maxHealth;
+		
+	}
+	
 	public List<Component> getChildComponents() {
 		return childComponents;
 	}
@@ -30,29 +60,6 @@ public abstract class AbstractComponent implements Component {
 	public int getMaxHealth() {
 		return maxHealth;
 	}
-
-
-	private final int DEFAULT_MAX_HEALTH = 10;
-	
-	@Expose private List<Component> childComponents;
-	
-	@Expose private final String name;
-	@Expose private final String description;
-	@Expose private final int maxHealth;
-	@Expose private int currentHealth;
-	
-	
-	public AbstractComponent (String name, String description, int maxHealth) {
-		
-		childComponents = new ArrayList<Component>();
-		
-		this.name = name;
-		this.description = description;
-		this.maxHealth = (maxHealth < DEFAULT_MAX_HEALTH) ? DEFAULT_MAX_HEALTH : maxHealth;
-		currentHealth = this.maxHealth;
-		
-	}
-	
 	
 	@Override
 	public String getName () {
@@ -145,5 +152,28 @@ public abstract class AbstractComponent implements Component {
 		return reply;
 		
 	}
+	
+	
+	@Override
+	public void removeComponent (Component component) {
+		
+		if (childComponents.contains(component)) {
+			
+			childComponents.remove(component);
+		
+		} else {
+			
+			for (Component c : childComponents) {
+				
+				c.removeComponent(component);
+				
+			}
+			
+		}
+		
+	}
+	
+	@Override
+	public abstract void tick (int steps);
 
 }

@@ -61,13 +61,33 @@ public class Colony {
 		
 	}
 	
-	public void removeComponent(Component component, String parent) {
-		//TODO
+	
+	public void removeComponent(Component component) {
+		
+		if(children.contains(component)) {
+			
+			children.remove(component);
+		
+		} else {
+			
+			for (Component c : children) {
+			
+				c.removeComponent(component);
+			
+			}
+		
+		}
+		
 	}
 
 
 	public void tick(int steps) {
-		// TODO Auto-generated method stub
+		
+		for (Component c : children) {
+			
+			c.tick(steps);
+		
+		}
 		
 	}
 	
