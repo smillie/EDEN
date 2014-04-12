@@ -4,13 +4,15 @@ import java.util.List;
 
 public interface Component {
 
-	public String getName();
+	public String getName ();
 	
-	public String getDescription();
+	public String getDescription ();
 	
-	public void setName(String newName);
+	public int getHealth ();
 	
-	public int getHealth();
+	public void doDamage (int damageAmount);
 	
-	public List<Component> getChildComponents();
+	public void doRepair (int repairAmount);
+	
+	public List<Component> getChildren();
 }

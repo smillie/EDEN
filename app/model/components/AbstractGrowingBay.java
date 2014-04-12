@@ -2,10 +2,8 @@ package model.components;
 
 public class AbstractGrowingBay extends AbstractComponent {
 
-	@Override
-	public int getHealth() {
-		// TODO Auto-generated method stub
-		return 0;
+	public AbstractGrowingBay(String name, String description, int maxHealth) {
+		super(name, description, maxHealth);
 	}
 
 }
