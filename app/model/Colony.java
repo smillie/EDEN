@@ -3,12 +3,14 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
+
 import model.components.Component;
 
 public class Colony {
 	
-	private List<Component> children;
-	private String name;
+	@Expose private List<Component> children;
+	@Expose private String name;
 	
 	public Colony (String name) {
 		
@@ -61,6 +63,12 @@ public class Colony {
 	
 	public void removeComponent(Component component, String parent) {
 		//TODO
+	}
+
+
+	public void tick(int steps) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
