@@ -22,8 +22,9 @@ public class MockResourceTest {
 	public void initialisationTest () {
 		
 		Resource resource = new MockResource();
-		assertNotNull(resource);
-		assertTrue(resource instanceof Resource);
+		assertEquals("mockResource", resource.getName());
+		assertEquals("mockResourceDescription", resource.getDescription());
+		assertEquals(0, resource.getAmount());
 		
 	}
 
