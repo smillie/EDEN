@@ -9,7 +9,11 @@ public class Colony {
 	List<Component> components;
 	String name;
 	
-	public void addComponent(Component component, String parent){
+	public void addComponent(Component component, String parent) {
+		//TODO
+	};
+	
+	public void removeComponent(Component component, String parent) {
 		//TODO
 	};
 }
