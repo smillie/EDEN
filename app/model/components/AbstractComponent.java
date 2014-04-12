@@ -91,5 +91,32 @@ public abstract class AbstractComponent implements Component {
 	}
 
 
+	@Override
+	public boolean addComponent(Component component, String parent) {
+		
+		boolean reply = false;
+		
+		if (parent.equalsIgnoreCase(name)) {
+			
+			reply =  childComponents.add(component);
+			
+		} else {
+			
+			// Pass it down the tree
+			for (Component c : childComponents) {
+				
+				boolean childReply = c.addComponent(component, parent);
+			
+				if (childReply) {
+					reply = true;
+					break;
+				}
+			}
+			
+		}
+		
+		return reply;
+		
+	}
 
 }

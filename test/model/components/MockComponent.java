@@ -15,6 +15,11 @@ public class MockComponent extends AbstractComponent {
 		super(name, description, healthMax);
 	
 	}
+	
+	
+	public MockComponent () {
+		super ("mock", "description", 0);
+	}
 
 
 

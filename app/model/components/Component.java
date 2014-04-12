@@ -15,4 +15,6 @@ public interface Component {
 	public void doRepair (int repairAmount);
 	
 	public List<Component> getChildren();
+
+	public boolean addComponent(Component component, String parent);
 }
