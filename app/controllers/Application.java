@@ -24,6 +24,7 @@ public class Application extends Controller {
     
     public static Result getComponents() {
     	 Gson gson = new Gson();
+    	 gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     	 List<Placeable> components = ComponentFactory.listAll();
     	 return ok(gson.toJson(components));
     }
