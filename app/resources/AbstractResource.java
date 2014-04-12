@@ -22,7 +22,7 @@ public abstract class AbstractResource implements Resource {
 		this.description = description;
 	}
 
-	public void setAmmount(int ammount) {
+	public void setAmount(int ammount) {
 		this.ammount = ammount;
 	}
 
@@ -31,7 +31,7 @@ public abstract class AbstractResource implements Resource {
 
 	}
 
-	public int getAmmount() {
+	public int getAmount() {
 		return this.ammount;
 	}
 

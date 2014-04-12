@@ -27,7 +27,7 @@ public class InflatableGreenHouseTest {
 	public void lowerBoundHealthTest() {
 		
 		Component component = new InflatableGreenhouse();
-		//TODO - finish this! - component.doDamage(100);
+		component.doDamage(100);
 		assertEquals(0, component.getHealth());
 		
 	}
