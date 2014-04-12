@@ -1,5 +1,15 @@
 package model;
 
-public class Colony {
+import java.util.List;
 
+import model.components.Component;
+
+public class Colony {
+	
+	List<Component> components;
+	String name;
+	
+	public void addComponent(Component component, String parent){
+		//TODO
+	};
 }

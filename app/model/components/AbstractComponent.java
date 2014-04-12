@@ -1,5 +1,5 @@
 package model.components;
 
-public class AbstractComponent {
+public class AbstractComponent implements Component{
 
 }
