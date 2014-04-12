@@ -21,8 +21,8 @@ public abstract class AbstractComponent implements Component {
 		
 		this.name = name;
 		this.description = description;
-		this.maxHealth = maxHealth < DEFAULT_MAX_HEALTH ? DEFAULT_MAX_HEALTH : maxHealth;
-		currentHealth = maxHealth;
+		this.maxHealth = (maxHealth < DEFAULT_MAX_HEALTH) ? DEFAULT_MAX_HEALTH : maxHealth;
+		currentHealth = this.maxHealth;
 		
 	}
 	
@@ -51,18 +51,32 @@ public abstract class AbstractComponent implements Component {
 	@Override
 	public void doDamage (int damageAmount) {
 		
-		//TODO
+		int newHealth = currentHealth-Math.abs(damageAmount);
+		
+		if (newHealth >= 0) {
+			
+			currentHealth = newHealth;
+			
+		} else {
+			
+			currentHealth = 0;
+			
+		}
 		
 	}
 	
 	@Override
 	public void doRepair (int healthRepaired) {
 		
-		int newTotal = currentHealth + healthRepaired;
+		int newTotal = currentHealth + Math.abs(healthRepaired);
 		
 		if (newTotal <= maxHealth) {
 			
 			currentHealth = newTotal;
+			
+		} else {
+			
+			currentHealth = maxHealth;
 			
 		}
 		
