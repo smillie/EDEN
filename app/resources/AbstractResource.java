@@ -8,8 +8,17 @@ public abstract class AbstractResource implements Resource {
 
 	@Expose private String description;
 
-	@Expose private int ammount;
+	@Expose private int amount;
 
+	
+	public AbstractResource(String name, String description, int amount) {
+		
+		this.name = name;
+		this.description = description;
+		this.amount = amount;
+
+	}
+	
 	public String getName() {
 		return this.name;
 	}
@@ -22,8 +31,8 @@ public abstract class AbstractResource implements Resource {
 		this.description = description;
 	}
 
-	public void setAmmount(int ammount) {
-		this.ammount = ammount;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
 	public String getDescription(){
@@ -31,8 +40,8 @@ public abstract class AbstractResource implements Resource {
 
 	}
 
-	public int getAmmount() {
-		return this.ammount;
+	public int getAmount() {
+		return this.amount;
 	}
 
 }

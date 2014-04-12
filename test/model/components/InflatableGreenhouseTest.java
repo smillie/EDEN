@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class InflatableGreenHouseTest {
+public class InflatableGreenhouseTest {
 
 	@Test
 	public void existsTest() {

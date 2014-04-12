@@ -6,6 +6,6 @@ public interface Resource {
 	
 	public String getDescription();
 	
-	public int getAmmount();
+	public int getAmount();
 	
 }
