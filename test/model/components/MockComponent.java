@@ -10,9 +10,9 @@ package model.components;
 
 public class MockComponent extends AbstractComponent {
 
-	public MockComponent (String name, String description) {
+	public MockComponent (String name, String description, int healthMax) {
 		
-		super(name, description, 200);
+		super(name, description, healthMax);
 	
 	}
 

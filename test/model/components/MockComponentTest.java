@@ -20,8 +20,8 @@ public class MockComponentTest {
 	public void initialisationTest() {
 		
 		Component component = new MockComponent("mock!", "description!");
-		assertNotNull(component);
-		assertTrue(component instanceof MockComponent);
+		assertTrue(component);
+		
 		
 	}
 	
