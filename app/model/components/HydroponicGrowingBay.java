@@ -1,6 +1,8 @@
 package model.components;
 
-public class HydroponicGrowingBay extends AbstractGrowingBay {
+import model.Placeable;
+
+public class HydroponicGrowingBay extends AbstractGrowingBay implements Placeable {
 
 	public HydroponicGrowingBay() {
 		

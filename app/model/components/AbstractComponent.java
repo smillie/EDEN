@@ -5,6 +5,31 @@ import java.util.List;
 
 public abstract class AbstractComponent implements Component {
 
+	public List<Component> getChildComponents() {
+		return childComponents;
+	}
+
+
+	public void setChildComponents(List<Component> childComponents) {
+		this.childComponents = childComponents;
+	}
+
+
+	public int getCurrentHealth() {
+		return currentHealth;
+	}
+
+
+	public void setCurrentHealth(int currentHealth) {
+		this.currentHealth = currentHealth;
+	}
+
+
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+
+
 	private final int DEFAULT_MAX_HEALTH = 10;
 	
 	private List<Component> childComponents;

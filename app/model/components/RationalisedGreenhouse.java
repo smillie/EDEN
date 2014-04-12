@@ -1,6 +1,8 @@
 package model.components;
 
-public class RationalisedGreenhouse extends AbstractGreenhouse {
+import model.Placeable;
+
+public class RationalisedGreenhouse extends AbstractGreenhouse implements Placeable{
 
 	public RationalisedGreenhouse() {
 		

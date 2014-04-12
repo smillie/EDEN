@@ -4,14 +4,17 @@ import play.*;
 import play.api.libs.json.Json;
 import play.mvc.*;
 import views.html.*;
+import model.Placeable;
 import model.components.AeroponicsGrowingBay;
 import model.components.Component;
+import model.components.ComponentFactory;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Application extends Controller {
 
@@ -20,13 +23,9 @@ public class Application extends Controller {
     }
     
     public static Result getComponents() {
-    	Gson gson = new Gson();
-    	Component c = new AeroponicsGrowingBay();
-    	c.setName("test");
-    	List<Component> components = new ArrayList<Component>();
-    	components.add(c);
-//    	gson.toJson(components);
-    	return ok(gson.toJson(components));
+    	 Gson gson = new Gson();
+    	 List<Placeable> components = ComponentFactory.listAll();
+    	 return ok(gson.toJson(components));
     }
 
 }
