@@ -12,6 +12,7 @@ public class Simulator {
 	@Expose private Colony colony;
 	@Expose private Environment environment;
 	@Expose private ResourceManager lifeSupport;
+
 	
 	public Colony getColony() {
 		return colony;
@@ -19,6 +20,7 @@ public class Simulator {
 	public void setColony(Colony colony) {
 		this.colony = colony;
 	}
+
 	public Environment getEnvironment() {
 		return environment;
 	}

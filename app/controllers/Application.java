@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.List;
 
-import model.Colony;
 import model.Placeable;
 import model.components.ComponentFactory;
 import play.mvc.Controller;
@@ -15,6 +14,8 @@ import com.google.gson.GsonBuilder;
 
 public class Application extends Controller {
 
+	private final static int STEPS = 500;
+	
 	public static Result index() {
 		return ok(index.render("Your new application is ready."));
 	}
@@ -33,12 +34,11 @@ public class Application extends Controller {
 		  if(json == null) {
 			  return badRequest();
 		  }
-		return ok(json);
 		
-//		Simulator state = new Simulator(new Colony("Bob"), null, null);
-//
-//		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-//		return ok(gson.toJson(state));
+		Gson gson = new Gson();
+		Simulator state = gson.fromJson(json.toString(), Simulator.class);
+
+		return ok(gson.toJson(Simulator.tick(state, STEPS)));
 		
 	}
 
