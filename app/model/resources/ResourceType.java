@@ -7,6 +7,7 @@ public enum ResourceType {
 	
 	BIOMASS ("Food", "Stored rations, Manufactured chemical suppliments and grown produce"),
 	CARBON_DIOXIDE ("Carbon Dioxide", "Exhaled by humans, required by plants"),
+	MINERALS ("Minerals", "Rocks and metals avaialble for manufacturing"),
 	OXYGEN ("Oxygen", "Required for breathing"),
 	POWER ("Energy", "Electrical power available to do work"),
 	WATER ("Water", "Mostly wet, most of the time"),
