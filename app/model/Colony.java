@@ -86,11 +86,18 @@ public class Colony {
 
 	public void tick(int steps) {
 		
+		doTickActions(steps);
+		
 		for (Component c : children) {
 			
 			c.tick(steps);
 		
 		}
+		
+	}
+	
+	
+	private void doTickActions (int steps) {
 		
 	}
 	

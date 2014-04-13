@@ -2,11 +2,12 @@ package model.resources;
 
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.annotations.Expose;
 
 public class BasicResourceManager implements ResourceManager{
 	
 	private static BasicResourceManager resourceManagerInstance;
-	private Map<ResourceType, ResourceStorage> resourceMap;
+	@Expose private Map<ResourceType, ResourceStorage> resourceMap;
 
 	
 	private BasicResourceManager () {
