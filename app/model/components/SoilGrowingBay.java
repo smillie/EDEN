@@ -1,8 +1,13 @@
 package model.components;
 
 import model.Placeable;
+import model.resources.BasicConverter;
+import model.resources.ResourceConverter;
+import static model.resources.Material.*;
 
 public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
+	
+	private ResourceConverter converter;
 	
 	public SoilGrowingBay() {
 		
@@ -12,6 +17,8 @@ public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
 		
 		// TODO technical details
 		// TODO growing rules
+		
+		converter = new BasicConverter(SOIL_BED_IN, SOIL_BED_OUT);
 	
 	}
 
@@ -20,16 +27,7 @@ public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
 		
 		// Check max production
 		int performance = super.getPerformancePercentage();
-		
-		
-		// Check resources
-		
-		
-		// TODO Optional waste conversion
-		
-		// Do consume
-		
-		// Do produce
+		converter.convert(performance);
 		
 	}
 
