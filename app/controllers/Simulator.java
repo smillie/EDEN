@@ -12,7 +12,7 @@ public class Simulator {
 
 	@Expose private Colony colony;
 	@Expose private Environment environment;
-	@Expose private ResourceManager lifeSupport;
+	@Expose private ResourceManager resources;
 
 	
 	public Colony getColony() {
@@ -28,18 +28,18 @@ public class Simulator {
 	public void setEnvironment(Environment environment) {
 		this.environment = environment;
 	}
-	public ResourceManager getLifeSupport() {
-		return lifeSupport;
+	public ResourceManager getResourceManager() {
+		return resources;
 	}
-	public void setLifeSupport(ResourceManager lifeSupport) {
-		this.lifeSupport = lifeSupport;
+	public void setLifeSupport(ResourceManager resourceManager) {
+		this.resources = resourceManager;
 	}
 	
-	public Simulator(Colony colony, Environment environment, ResourceManager lifeSupport){
+	public Simulator(Colony colony, Environment environment, ResourceManager resources){
 		
 		this.colony = colony;
 		this.environment = environment;
-		this.lifeSupport = lifeSupport;
+		this.resources = resources;
 		
 	}
 	
