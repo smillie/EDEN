@@ -1,5 +1,6 @@
 package controllers;
 
+import play.Logger;
 import resources.ResourceManager;
 
 import com.google.gson.annotations.Expose;
@@ -43,7 +44,7 @@ public class Simulator {
 	}
 	
 	public static Simulator tick(Simulator simulator, int steps) {
-		
+		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
 		
 		return simulator;

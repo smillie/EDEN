@@ -8,42 +8,20 @@ import model.Placeable;
 
 import org.reflections.Reflections;
 
-public class ComponentFactory {
+import play.Logger;
 
-	public static Component getInflatableGreenhouse () {
-		
-		return new InflatableGreenhouse();
-		
-	}
+public class ComponentFactory {
 	
-	public static Component getFlatPackedGreenHouse (){
-	
-		return new FlatPackedGreenhouse();
-	
-	}
-	
-	public static Component getRationalisedGreenHouse () {
+	public static Component get(String name) {
+		Component component = null;
 		
-		return new RationalisedGreenhouse();
+		try {
+			component = (Component) Class.forName("model.components."+name).newInstance();
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+			Logger.error("Cannot create component "+name);
+		}
 		
-	}
-	
-	public static Component getSoilGrowingBay() {
-		
-		return new SoilGrowingBay();
-		
-	}
-	
-	public static Component getHydroponicGrowingBay() {
-	
-		return new HydroponicGrowingBay();
-		
-	}
-	
-	public static Component getAeroponicsGrowingBay() {
-		
-		return new AeroponicsGrowingBay();
-		
+		return component;
 	}
 	
 	public static List<Placeable> listAll() {
@@ -54,11 +32,9 @@ public class ComponentFactory {
 		for (Class<? extends Placeable> s: subTypes) {
 			try {
 				components.add(s.newInstance());
-			} catch (InstantiationException e) {
+			} catch (InstantiationException | IllegalAccessException e) {
 				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			}
+			} 
 		}
 		
 
