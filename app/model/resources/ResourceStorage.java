@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 public class ResourceStorage {
 	
-	private ResourceType resource;
+	@Expose private ResourceType resource;
 	@Expose private int count;
 	
 	

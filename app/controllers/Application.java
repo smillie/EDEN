@@ -7,7 +7,6 @@ import model.Placeable;
 import model.components.Component;
 import model.components.ComponentFactory;
 import model.components.ComponentReviver;
-import model.resources.BasicResourceManager;
 import model.resources.ResourceManager;
 import model.resources.ResourceManagerReviver;
 import model.resources.ResourceType;

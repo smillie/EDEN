@@ -85,16 +85,19 @@ public abstract class AbstractComponent implements Component {
 	@Override
 	public void doDamage (int damageAmount) {
 		
-		// TODO - is this safety allowing wrong behaviour?
-		int newHealth = currentHealth-Math.abs(damageAmount);
+		if (damageAmount > 0) {
 		
-		if (newHealth >= 0) {
+			int newHealth = currentHealth-Math.abs(damageAmount);
 			
-			currentHealth = newHealth;
-			
-		} else {
-			
-			currentHealth = 0;
+			if (newHealth >= 0) {
+				
+				currentHealth = newHealth;
+				
+			} else {
+				
+				currentHealth = 0;
+				
+			}
 			
 		}
 		
@@ -103,16 +106,19 @@ public abstract class AbstractComponent implements Component {
 	@Override
 	public void doRepair (int healthRepaired) {
 		
-		// TODO - is this safety allowing wrong behaviour?
-		int newTotal = currentHealth + Math.abs(healthRepaired);
+		if (healthRepaired > 0) {
 		
-		if (newTotal <= maxHealth) {
+			int newTotal = currentHealth + Math.abs(healthRepaired);
 			
-			currentHealth = newTotal;
-			
-		} else {
-			
-			currentHealth = maxHealth;
+			if (newTotal <= maxHealth) {
+				
+				currentHealth = newTotal;
+				
+			} else {
+				
+				currentHealth = maxHealth;
+				
+			}
 			
 		}
 		

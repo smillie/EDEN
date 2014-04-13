@@ -10,7 +10,6 @@ import model.resources.BasicConverter;
 import model.resources.BasicResourceManager;
 import model.resources.ResourceConverter;
 import model.resources.ResourceManager;
-import model.resources.ResourceType;
 
 import static model.resources.Material.*;
 import static model.resources.ResourceType.*;

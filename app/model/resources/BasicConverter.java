@@ -4,7 +4,6 @@ import static model.resources.ResourceType.*;
 
 public class BasicConverter implements ResourceConverter {
 
-	private final int ITERATIVE_STEP_DOWN = 25;
 	private final ResourceManager resources = BasicResourceManager.getInstance();
 	
 	private Material inputProfile;

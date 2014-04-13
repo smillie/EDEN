@@ -11,15 +11,14 @@ public class AeroponicsGrowingBay extends AbstractGrowingBay implements Placeabl
 	
 	public AeroponicsGrowingBay() {
 		super("Aeroponics Growing Bay",
-			  "Plants grow in air",
+			  "Plants grow in air or mist without soil or other medium. This form of growing allows the plant to grow unrestricted by soil space or competition.  Exposed roots allow better access to air which promotes increased uptake of carbon dioxide.",
 			   30);
 		
-		//TODO - technical description
-		//TODO - growing methods
-		
 		converter = new BasicConverter(AERO_BED_IN, AERO_BED_OUT);
+		
 	}
 
+	
 	@Override
 	protected void doTickActions(int steps) {
 
@@ -29,6 +28,4 @@ public class AeroponicsGrowingBay extends AbstractGrowingBay implements Placeabl
 		
 	}
 	
-
-
 }

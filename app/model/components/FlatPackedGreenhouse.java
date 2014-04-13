@@ -8,7 +8,7 @@ public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeabl
 
 	public FlatPackedGreenhouse() {
 		super("Flat Packed Greenhouse",
-			  "A sturdy greenhouse made of rigid panels",
+			  "A sturdy greenhouse made of rigid panels.  This generally useful space is not designed for easy transport and assembly and is a bit stronger than an inflatable greenhouse.  Inefficiencies cause a bit more waste.",
 			  100);
 	}
 
@@ -18,8 +18,5 @@ public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeabl
 		super.gainResources(1, WASTE);
 		
 	}
-	
-	//TODO technical background
-	//TODO growing rules
 
 }

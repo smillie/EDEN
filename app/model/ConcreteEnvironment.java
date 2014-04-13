@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import play.Logger;
 
@@ -10,6 +11,8 @@ public class ConcreteEnvironment implements Environment {
 	private static Environment environmentInstance;
 	
 	private EnvironmentType environmentType;
+	
+	private Random random = new Random();
 
 	private ConcreteEnvironment () {
 		
@@ -43,8 +46,23 @@ public class ConcreteEnvironment implements Environment {
 
 	@Override
 	public String getWeatherType() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		int result = (int) (environmentType.getWeatherChance() * random.nextInt(100));
+		
+		if (result < 50) {
+			return "Clear Skies";
+		}
+		
+		if (result < 80) {
+			return "Cloudy";
+		}
+		
+		if (result < 95) {
+			return "Stormy";
+		} else {
+			return "Dust Storm!";
+		}
+		
 	}
 
 	@Override

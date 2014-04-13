@@ -12,11 +12,8 @@ public class HydroponicGrowingBay extends AbstractGrowingBay implements Placeabl
 	public HydroponicGrowingBay() {
 		
 		super("Hydroponic Growing Bay",
-			  "Plants growing in a regulated nutrient gel",
-			   40);
-		
-		// TODO technical details
-		// TODO growing rules		
+			  "Plants growing in a mineral or water based gel, with carefully balanced nutrients.  Without soil, plants have better protection agains under or over watering.  Water can also be reused more easily and monitored for pests and contaminants.",
+			   40);		
 		
 		converter = new BasicConverter(AQUA_BED_IN, AQUA_BED_OUT);
 

@@ -4,9 +4,7 @@ import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
 import model.Reporter;
-import model.resources.BasicResourceManager;
 import model.resources.ResourceManager;
-import model.resources.ResourceType;
 import play.Logger;
 
 import com.google.gson.annotations.Expose;

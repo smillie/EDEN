@@ -1,6 +1,6 @@
 package model.resources;
 
-	// TODO - if extending this system - construct the resource list using reflection
+	// TODO - if extending this system - construct the resource list from a configuration file?
 
 @SuppressWarnings("unused")
 public enum ResourceType {

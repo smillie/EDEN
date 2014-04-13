@@ -12,11 +12,8 @@ public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
 	public SoilGrowingBay() {
 		
 		super("Soil Growing Bay", 
-			  "Plants growing in a big pot of soil - just like home!",
+			  "Plants growing in a big pot of soil - just like home!  Soil is made from recycled waste and space crop biomass.  While heavy, soil requires little effort to maintain.",
 			  60);
-		
-		// TODO technical details
-		// TODO growing rules
 		
 		converter = new BasicConverter(SOIL_BED_IN, SOIL_BED_OUT);
 	

@@ -7,12 +7,9 @@ public class RationalisedGreenhouse extends AbstractGreenhouse implements Placea
 	public RationalisedGreenhouse() {
 		
 		super("Rationalised Greenhouse",
-			  "A robust, highly modular design using the latest materials formed into a minimal number of reusable parts," +
-			  "easy to repair and maintain",
+			  "A robust, highly modular design using the latest materials specifically for use as a greenhouse.  This module is formed from a minimal number of interchangable parts, and is so easy to maintain it practically repairs itself!",
 			  150);
 		
-		// TODO technical description
-		// TODO growing methods
 	}
 
 	
@@ -21,6 +18,4 @@ public class RationalisedGreenhouse extends AbstractGreenhouse implements Placea
 		super.doRepair(1);
 	}
 	
-
-
 }
