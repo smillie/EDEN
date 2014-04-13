@@ -1,4 +1,4 @@
-package components;
+package model.components;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
