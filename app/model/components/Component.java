@@ -2,6 +2,10 @@ package model.components;
 
 import java.util.List;
 
+import model.Environment;
+
+import resources.ResourceManager;
+
 public interface Component {
 
 	public String getName ();
@@ -21,4 +25,8 @@ public interface Component {
 	public void removeComponent (Component component);
 
 	public void tick (int steps);
+
+	public ResourceManager getResourceManager();
+
+	public Environment getEnvironment();
 }

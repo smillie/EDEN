@@ -3,11 +3,11 @@ package model.components;
 import model.Placeable;
 
 public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
-
+	
 	public SoilGrowingBay() {
 		
 		super("Soil Growing Bay", 
-			  "Plants growing in a bucket of soil - just like home!",
+			  "Plants growing in a big pot of soil - just like home!",
 			  60);
 		
 		// TODO technical details
@@ -17,7 +17,19 @@ public class SoilGrowingBay extends AbstractGrowingBay implements Placeable {
 
 	@Override
 	protected void doTickActions(int steps) {
-		// TODO Auto-generated method stub
+		
+		// Check max production
+		int performance = super.getPerformancePercentage();
+		
+		
+		// Check resources
+		
+		
+		// TODO Optional waste conversion
+		
+		// Do consume
+		
+		// Do produce
 		
 	}
 

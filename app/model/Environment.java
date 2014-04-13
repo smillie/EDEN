@@ -10,4 +10,6 @@ public interface Environment {
 
 	public void setEnvironment(String environmentName);
 
+	public float getLightLevel();
+
 }

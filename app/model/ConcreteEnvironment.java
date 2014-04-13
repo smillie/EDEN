@@ -57,5 +57,12 @@ public class ConcreteEnvironment implements Environment {
 		
 		return names;
 	}
+
+	@Override
+	public float getLightLevel() {
+
+		return environmentType.getLightLvel();
+		
+	}
 	
 }

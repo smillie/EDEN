@@ -6,4 +6,14 @@ public abstract class AbstractGrowingBay extends AbstractComponent {
 		super(name, description, maxHealth);
 	}
 
+	protected int getPerformancePercentage () {
+		
+		float lightlevel = super.getEnvironment().getLightLevel();
+		int integrity = (int) (Math.floor(super.getCurrentHealth()*1.0)/(super.getMaxHealth()*1.0));
+		
+		int performance = (int) (lightlevel * integrity);
+		
+		return performance;
+		
+	}
 }

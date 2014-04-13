@@ -23,9 +23,10 @@ public class MockComponent extends AbstractComponent {
 
 
 	@Override
-	public void tick(int steps) {
-		// Does Nothing
+	protected void doTickActions(int steps) {
+		// does nothing
 		
 	}
+
 
 }

@@ -20,15 +20,15 @@ public abstract class AbstractGreenhouse extends AbstractComponent {
 	}
 	
 	
-	public void loseResources (int count, ResourceType resource) {
+	public int loseResources (int count, ResourceType resource) {
 		
-		super.loseResources (count, resource);
+		return super.getResourceManager().takeResources(count, resource);
 		
 	}
 	
 	public void gainResources (int count, ResourceType resource) {
 		
-		super.gainResources(count, resource);
+		super.getResourceManager().addResources(count, resource);
 		
 	}
 

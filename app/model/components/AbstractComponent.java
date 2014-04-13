@@ -176,17 +176,17 @@ public abstract class AbstractComponent implements Component {
 		
 	}
 	
+	@Override
+	public ResourceManager getResourceManager () {
 	
-	public void loseResources(int amount, ResourceType resource) {
-	
-		resources.takeResources(amount, resource);
+		return resources;
 		
 	}
 	
-	
-	public void gainResources(int amount, ResourceType resource) {
+	@Override
+	public Environment getEnvironment () {
 		
-		resources.addResources(amount, resource);
+		return environment;
 		
 	}
 	
@@ -205,8 +205,6 @@ public abstract class AbstractComponent implements Component {
 	}
 	
 	protected abstract void doTickActions (int steps);
-
-
 
 
 }
