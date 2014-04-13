@@ -4,7 +4,9 @@ import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
 import model.Reporter;
+import model.resources.BasicResourceManager;
 import model.resources.ResourceManager;
+import model.resources.ResourceType;
 import play.Logger;
 
 import com.google.gson.annotations.Expose;
@@ -57,6 +59,8 @@ public class Simulator {
 		Reporter.getInstance().flush();
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
+		simulator.resources = BasicResourceManager.getInstance();
+		simulator.resources.addResources(3, ResourceType.OXYGEN);
 				
 		//This where the real fun begins
 		Logger.debug("Ticking simulation for " + steps + " steps.");

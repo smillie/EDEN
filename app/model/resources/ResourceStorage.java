@@ -1,9 +1,11 @@
 package model.resources;
 
+import com.google.gson.annotations.Expose;
+
 public class ResourceStorage {
 	
 	private ResourceType resource;
-	private int count;
+	@Expose private int count;
 	
 	
 	public ResourceStorage(ResourceType resourceType) {
