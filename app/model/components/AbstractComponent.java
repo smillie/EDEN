@@ -5,6 +5,7 @@ import java.util.List;
 
 import resources.BasicResourceManager;
 import resources.ResourceManager;
+import resources.ResourceType;
 
 import model.ConcreteEnvironment;
 import model.Environment;
@@ -85,6 +86,7 @@ public abstract class AbstractComponent implements Component {
 	@Override
 	public void doDamage (int damageAmount) {
 		
+		// TODO - is this safety allowing wrong behaviour?
 		int newHealth = currentHealth-Math.abs(damageAmount);
 		
 		if (newHealth >= 0) {
@@ -102,6 +104,7 @@ public abstract class AbstractComponent implements Component {
 	@Override
 	public void doRepair (int healthRepaired) {
 		
+		// TODO - is this safety allowing wrong behaviour?
 		int newTotal = currentHealth + Math.abs(healthRepaired);
 		
 		if (newTotal <= maxHealth) {
@@ -173,7 +176,37 @@ public abstract class AbstractComponent implements Component {
 		
 	}
 	
+	
+	public void loseResources(int amount, ResourceType resource) {
+	
+		resources.takeResources(amount, resource);
+		
+	}
+	
+	
+	public void gainResources(int amount, ResourceType resource) {
+		
+		resources.addResources(amount, resource);
+		
+	}
+	
+	
 	@Override
-	public abstract void tick (int steps);
+	public final void tick (int steps) {
+		
+		doTickActions(steps);
+		
+		for (Component c : childComponents) {
+			
+			c.tick(steps);
+		
+		}
+		
+	}
+	
+	protected abstract void doTickActions (int steps);
+
+
+
 
 }

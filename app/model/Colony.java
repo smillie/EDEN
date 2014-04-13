@@ -15,7 +15,7 @@ public class Colony {
 	public Colony (String name) {
 		
 		children = new ArrayList<Component>();
-		this.name = (name == null) ? "colony" : name; 
+		this.name = (name == null) ? "colony" : name;
 		
 	}
 	

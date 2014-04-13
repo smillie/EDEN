@@ -8,15 +8,17 @@ public class AeroponicsGrowingBay extends AbstractGrowingBay implements Placeabl
 		super("Aeroponics Growing Bay",
 			  "Plants grow in air",
 			   30);
+		
+		//TODO - technical description
+		//TODO - growing methods
 	}
 
 	@Override
-	public void tick(int steps) {
+	protected void doTickActions(int steps) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	//TODO - technical description
-	//TODO - growing methods
+
 
 }

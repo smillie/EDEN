@@ -1,5 +1,7 @@
 package model.components;
 
+import resources.ResourceType;
+import static resources.ResourceType.*;
 import model.Placeable;
 
 public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeable {
@@ -11,8 +13,9 @@ public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeabl
 	}
 
 	@Override
-	public void tick(int steps) {
-		// TODO Auto-generated method stub
+	protected void doTickActions(int steps) {
+		super.loseResources(1, WATER);
+		super.gainResources(1, WASTE);
 		
 	}
 	

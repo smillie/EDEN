@@ -10,15 +10,15 @@ public class HydroponicGrowingBay extends AbstractGrowingBay implements Placeabl
 			  "Plants growing in a regulated nutrient gel",
 			   40);
 		
+		// TODO technical details
+		// TODO growing rules
 	}
 
+
 	@Override
-	public void tick(int steps) {
+	protected void doTickActions(int steps) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	// TODO technical details
-	// TODO growing rules
-	
+
 }
