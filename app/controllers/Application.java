@@ -2,6 +2,8 @@ package controllers;
 
 import java.util.List;
 
+import model.ConcreteEnvironment;
+import model.Environment;
 import model.Placeable;
 import model.components.ComponentFactory;
 import play.mvc.Controller;
@@ -25,6 +27,14 @@ public class Application extends Controller {
 		
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		List<Placeable> components = ComponentFactory.listAll();
+		return ok(gson.toJson(components));
+	}
+	
+	public static Result getEnvironments() {
+		response().setHeader("Access-Control-Allow-Origin", "*");
+		
+		Gson gson = new GsonBuilder().create();
+		List<String> components = ConcreteEnvironment.listAll();
 		return ok(gson.toJson(components));
 	}
 	
