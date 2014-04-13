@@ -3,8 +3,7 @@ package model.components;
 import java.util.List;
 
 import model.Environment;
-
-import resources.ResourceManager;
+import model.resources.ResourceManager;
 
 public interface Component {
 

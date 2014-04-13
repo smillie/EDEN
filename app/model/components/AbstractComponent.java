@@ -3,12 +3,11 @@ package model.components;
 import java.util.ArrayList;
 import java.util.List;
 
-import resources.BasicResourceManager;
-import resources.ResourceManager;
-import resources.ResourceType;
-
 import model.ConcreteEnvironment;
 import model.Environment;
+import model.resources.BasicResourceManager;
+import model.resources.ResourceManager;
+import model.resources.ResourceType;
 
 import com.google.gson.annotations.Expose;
 

@@ -4,8 +4,8 @@ import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
 import model.Reporter;
+import model.resources.ResourceManager;
 import play.Logger;
-import resources.ResourceManager;
 
 import com.google.gson.annotations.Expose;
 

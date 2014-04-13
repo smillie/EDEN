@@ -1,8 +1,8 @@
 package resources;
 
 import static org.junit.Assert.*;
-
 import model.Colony;
+import model.resources.Resource;
 
 import org.junit.Test;
 

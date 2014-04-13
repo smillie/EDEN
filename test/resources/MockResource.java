@@ -1,5 +1,7 @@
 package resources;
 
+import model.resources.AbstractResource;
+
 public class MockResource extends AbstractResource {
 
 	MockResource () {

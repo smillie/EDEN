@@ -1,6 +1,9 @@
 package resources;
 
 import static org.junit.Assert.*;
+import model.resources.BasicResourceManager;
+import model.resources.ResourceManager;
+import model.resources.ResourceType;
 
 import org.junit.Test;
 

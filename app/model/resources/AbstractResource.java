@@ -1,4 +1,4 @@
-package resources;
+package model.resources;
 
 import com.google.gson.annotations.Expose;
 

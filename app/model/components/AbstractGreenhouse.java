@@ -1,6 +1,6 @@
 package model.components;
 
-import resources.ResourceType;
+import model.resources.ResourceType;
 
 public abstract class AbstractGreenhouse extends AbstractComponent {	
 	

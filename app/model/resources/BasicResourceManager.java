@@ -1,4 +1,4 @@
-package resources;
+package model.resources;
 
 import java.util.Map;
 import java.util.HashMap;

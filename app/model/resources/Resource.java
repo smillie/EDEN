@@ -1,4 +1,4 @@
-package resources;
+package model.resources;
 
 public interface Resource {
 
