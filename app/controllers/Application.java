@@ -8,6 +8,8 @@ import model.components.Component;
 import model.components.ComponentFactory;
 import model.components.ComponentReviver;
 import model.resources.BasicResourceManager;
+import model.resources.ResourceManager;
+import model.resources.ResourceManagerReviver;
 import model.resources.ResourceType;
 import play.Logger;
 import play.mvc.Controller;
@@ -54,7 +56,7 @@ public class Application extends Controller {
 
 	public static Result simulate() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
-//		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
+		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
 		
 		JsonNode json = request().body().asJson();
 		if(json == null) {
@@ -65,6 +67,8 @@ public class Application extends Controller {
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
+		gsonBuilder.registerTypeAdapter(ResourceManager.class, new ResourceManagerReviver());
+		
 		Gson gson = gsonBuilder.excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
 		
 		Simulator state = gson.fromJson(json.toString(), Simulator.class);
