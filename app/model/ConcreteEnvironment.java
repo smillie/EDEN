@@ -22,7 +22,7 @@ public class ConcreteEnvironment implements Environment {
 	public void setEnvironment(String name) {
 		
 		for (EnvironmentType e: EnvironmentType.values()) {
-			if (e.equals(name)) {
+			if (e.getName().equals(name)) {
 				environmentType = e;
 			}
 		}
