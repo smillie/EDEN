@@ -26,6 +26,9 @@ public class Colony {
 		
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	public boolean addComponent(Component component) {
 		

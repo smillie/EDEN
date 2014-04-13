@@ -3,6 +3,7 @@ package controllers;
 import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
+import model.Reporter;
 import play.Logger;
 import resources.ResourceManager;
 
@@ -14,6 +15,7 @@ public class Simulator {
 	@Expose private ResourceManager resources;
 	@Expose private String environmentName;
 	@Expose private ResourceManager lifeSupport;
+	@Expose private Reporter reporter = Reporter.getInstance();
 	private Environment environment;
 
 	
@@ -36,9 +38,12 @@ public class Simulator {
 	public void setLifeSupport(ResourceManager resourceManager) {
 		this.resources = resourceManager;
 	}
+	public void setReporter() {
+		this.reporter = Reporter.getInstance();
+	}
 	
 
-	public Simulator(Colony colony, String environment, ResourceManager lifeSupport){
+	public Simulator(Colony colony, String environment, ResourceManager lifeSupport) {
 		
 		this.colony = colony;
 		this.environmentName = environment;
@@ -50,6 +55,7 @@ public class Simulator {
 	
 	public static Simulator tick(Simulator simulator, int steps) {
 		Logger.debug("Ticking simulation for " + steps + " steps.");
+		simulator.setReporter();
 		simulator.colony.tick(steps);
 		
 		return simulator;
