@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import play.Logger;
+
 public class ConcreteEnvironment implements Environment {
 	
 	private static Environment environmentInstance;
@@ -16,6 +18,7 @@ public class ConcreteEnvironment implements Environment {
 	public static Environment getInstance () {
 		
 		if (environmentInstance == null) {
+			Logger.debug("Setting environment instance");
 			environmentInstance = new ConcreteEnvironment();
 		}
 		return environmentInstance;
@@ -26,6 +29,7 @@ public class ConcreteEnvironment implements Environment {
 		
 		for (EnvironmentType e: EnvironmentType.values()) {
 			if (e.getName().equals(name)) {
+				Logger.debug("Setting environment to "+ e.getName());
 				environmentType = e;
 			}
 		}

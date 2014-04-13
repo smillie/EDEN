@@ -53,10 +53,16 @@ public class Simulator {
 		
 	}
 	
-	public static Simulator tick(Simulator simulator, int steps) {
-		Logger.debug("Ticking simulation for " + steps + " steps.");
+	public static Simulator tick(Simulator simulator, int steps) {		
+		//Setting some things...
 		simulator.setReporter();
+		simulator.environment = ConcreteEnvironment.getInstance();
+		simulator.environment.setEnvironment(simulator.environmentName);
+		
+		//This where the real fun begins
+		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
+		
 		
 		return simulator;
 	}
