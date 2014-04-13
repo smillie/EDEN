@@ -59,8 +59,6 @@ public class Simulator {
 		Reporter.getInstance().flush();
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
-		simulator.resources = BasicResourceManager.getInstance();
-		simulator.resources.addResources(3, ResourceType.OXYGEN);
 				
 		//This where the real fun begins
 		Logger.debug("Ticking simulation for " + steps + " steps.");
