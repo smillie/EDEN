@@ -4,7 +4,9 @@ import java.util.List;
 
 import model.ConcreteEnvironment;
 import model.Placeable;
+import model.components.Component;
 import model.components.ComponentFactory;
+import model.components.ComponentReviver;
 import play.Logger;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -49,7 +51,11 @@ public class Application extends Controller {
 
 		Logger.debug("Input: " + json.toString());
 		
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
+		Gson gson = gsonBuilder.excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
+
+		
 		Simulator state = gson.fromJson(json.toString(), Simulator.class);
 		
 		state.getColony().setName("Steve");

@@ -4,6 +4,7 @@ import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
 import model.Reporter;
+import model.components.AeroponicsGrowingBay;
 import model.resources.ResourceManager;
 import play.Logger;
 
@@ -56,13 +57,18 @@ public class Simulator {
 	public static Simulator tick(Simulator simulator, int steps) {		
 		//Setting some things...
 		simulator.setReporter();
+		Reporter.getInstance().flush();
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
+		
+		Reporter.getInstance().record("a", "");
+		Reporter.getInstance().record("b", "");
+		simulator.colony.addComponent(new AeroponicsGrowingBay());
 		
 		//This where the real fun begins
 		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
-		
+				
 		
 		return simulator;
 	}
