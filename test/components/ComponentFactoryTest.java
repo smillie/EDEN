@@ -1,7 +1,7 @@
 package components;
 
-import static org.junit.Assert.*;
-import model.Colony;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import model.components.Component;
 import model.components.ComponentFactory;
 

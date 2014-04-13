@@ -7,7 +7,6 @@ import model.ConcreteEnvironment;
 import model.Environment;
 import model.resources.BasicResourceManager;
 import model.resources.ResourceManager;
-import model.resources.ResourceType;
 
 import com.google.gson.annotations.Expose;
 

@@ -1,7 +1,8 @@
 package resources;
 
-import static org.junit.Assert.*;
-import model.Colony;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import model.resources.Resource;
 
 import org.junit.Test;

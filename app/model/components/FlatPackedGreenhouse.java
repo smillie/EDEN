@@ -1,8 +1,8 @@
 package model.components;
 
-import static model.resources.ResourceType.*;
+import static model.resources.ResourceType.WASTE;
+import static model.resources.ResourceType.WATER;
 import model.Placeable;
-import model.resources.ResourceType;
 
 public class FlatPackedGreenhouse extends AbstractGreenhouse implements Placeable {
 
