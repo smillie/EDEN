@@ -4,7 +4,6 @@ import model.Colony;
 import model.ConcreteEnvironment;
 import model.Environment;
 import model.Reporter;
-import model.components.AeroponicsGrowingBay;
 import model.resources.ResourceManager;
 import play.Logger;
 
@@ -15,7 +14,6 @@ public class Simulator {
 	@Expose private Colony colony;
 	@Expose private ResourceManager resources;
 	@Expose private String environmentName;
-	@Expose private ResourceManager lifeSupport;
 	@Expose private Reporter reporter = Reporter.getInstance();
 	private Environment environment;
 
@@ -48,7 +46,6 @@ public class Simulator {
 		
 		this.colony = colony;
 		this.environmentName = environment;
-		this.lifeSupport = lifeSupport;
 		this.environment = ConcreteEnvironment.getInstance();
 		this.environment.setEnvironment(this.environmentName);
 		

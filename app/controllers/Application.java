@@ -45,7 +45,7 @@ public class Application extends Controller {
 
 	public static Result simulate() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
-		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
+//		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
 		
 		JsonNode json = request().body().asJson();
 		if(json == null) {
