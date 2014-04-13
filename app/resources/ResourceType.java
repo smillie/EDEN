@@ -4,12 +4,20 @@ package resources;
 
 public enum ResourceType {
 	
-	BIOMASS,
-	CARBON_DIOXIDE,
-	ENERGY,
-	OXYGEN,
-	POWER,
-	WATER,
-	WASTE;
+	BIOMASS ("Food", "Stored rations, Manufactured chemical suppliments and grown produce"),
+	CARBON_DIOXIDE ("Carbon Dioxide", "Exhaled by humans, required by plants"),
+	OXYGEN ("Oxygen", "Required for breathing"),
+	POWER ("Energy", "Electrical power available to do work"),
+	WATER ("Water", "Mostly wet, most of the time"),
+	WASTE ("Waste", "Material that might be recyclable");
+	
+	private String name;
+	private String description;
+	
+	private ResourceType (String name, String description) {
+		this.name = name;
+		this.description = description;
+		
+	}
 	
 }
