@@ -19,7 +19,6 @@ public class Colony {
 	@Expose private List<Component> components;
 	@Expose private String name;
 	@Expose private int population;
-	ResourceManager resources = BasicResourceManager.getInstance();
 	ResourceConverter personConverter = new BasicConverter(PERSON_IN, PERSON_OUT);
 	
 	public Colony (String name) {
@@ -130,9 +129,11 @@ public class Colony {
 	
 	private boolean doPopulationGrowth() {
 		
-		return resources.checkLevel(BIOMASS) > PERSON_IN.biomass*10 &&
-				resources.checkLevel(WATER) > PERSON_IN.h2o*10 &&
-				 resources.checkLevel(OXYGEN) > PERSON_IN.o2*10;
+		ResourceManager resources = BasicResourceManager.getInstance();
+		
+		return (resources.checkLevel(BIOMASS) > PERSON_IN.biomass*10) &&
+				(resources.checkLevel(WATER) > PERSON_IN.h2o*10) &&
+				 (resources.checkLevel(OXYGEN) > PERSON_IN.o2*10);
 				
 		
 	}
