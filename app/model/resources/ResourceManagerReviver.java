@@ -2,8 +2,6 @@ package model.resources;
 
 import java.lang.reflect.Type;
 
-import model.components.Component;
-
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -11,10 +9,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
 
-public class ResourceManagerReviver implements JsonDeserializer<Component> {
+public class ResourceManagerReviver implements JsonDeserializer<ResourceManager> {
 
 	@Override
-	public Component deserialize(JsonElement json, Type arg1,
+	public ResourceManager deserialize(JsonElement json, Type arg1,
 			JsonDeserializationContext arg2) throws JsonParseException {
 		JsonObject jsonObject =  json.getAsJsonObject();
 		JsonPrimitive prim = (JsonPrimitive) jsonObject.get(BasicResourceManager.class.getCanonicalName());
