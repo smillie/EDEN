@@ -10,15 +10,17 @@ import model.resources.BasicConverter;
 import model.resources.BasicResourceManager;
 import model.resources.ResourceConverter;
 import model.resources.ResourceManager;
+import model.resources.ResourceType;
 
 import static model.resources.Material.*;
+import static model.resources.ResourceType.*;
 
 public class Colony {
 	
 	@Expose private List<Component> components;
 	@Expose private String name;
 	@Expose private int population;
-	private ResourceManager resources = BasicResourceManager.getInstance();
+	ResourceManager resources = BasicResourceManager.getInstance();
 	ResourceConverter personConverter = new BasicConverter(PERSON_IN, PERSON_OUT);
 	
 	public Colony (String name) {
@@ -120,11 +122,23 @@ public class Colony {
 	
 		}
 		
+		if (doPopulationGrowth()) {
+			population++;
+		}
 		
-	
 	}
 	
 	
+	private boolean doPopulationGrowth() {
+		
+		return resources.checkLevel(BIOMASS) > PERSON_IN.biomass*10 &&
+				resources.checkLevel(WATER) > PERSON_IN.h2o*10 &&
+				 resources.checkLevel(OXYGEN) > PERSON_IN.o2*10;
+				
+		
+	}
+
+
 	private int doPopulationConsumption (int pop) {
 		
 		int persisted = 0;
