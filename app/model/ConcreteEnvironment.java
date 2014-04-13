@@ -3,6 +3,8 @@ package model;
 public class ConcreteEnvironment implements Environment {
 	
 	private static Environment environmentInstance;
+	
+	private EnvironmentType environmentType;
 
 	private ConcreteEnvironment () {
 		
@@ -11,19 +13,25 @@ public class ConcreteEnvironment implements Environment {
 	public static Environment getInstance () {
 		
 		if (environmentInstance == null) {
-			
 			environmentInstance = new ConcreteEnvironment();
-			
 		}
-		
 		return environmentInstance;
+		
+	}
+	
+	public void setEnvironment(String name) {
+		
+		for (EnvironmentType e: EnvironmentType.values()) {
+			if (e.equals(name)) {
+				environmentType = e;
+			}
+		}
 		
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return environmentType.getName();
 	}
 
 	@Override
@@ -35,7 +43,7 @@ public class ConcreteEnvironment implements Environment {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return environmentType.getDescription();
 	}
 	
 }
