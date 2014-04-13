@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index()
 GET		/components					controllers.Application.getComponents()
+GET		/environments				controllers.Application.getEnvironments()
 POST	/simulate					controllers.Application.simulate()
 
 # Map static resources from the /public folder to the /assets URL path

@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConcreteEnvironment implements Environment {
 	
 	private static Environment environmentInstance;
@@ -22,7 +25,7 @@ public class ConcreteEnvironment implements Environment {
 	public void setEnvironment(String name) {
 		
 		for (EnvironmentType e: EnvironmentType.values()) {
-			if (e.equals(name)) {
+			if (e.getName().equals(name)) {
 				environmentType = e;
 			}
 		}
@@ -43,6 +46,16 @@ public class ConcreteEnvironment implements Environment {
 	@Override
 	public String getDescription() {
 		return environmentType.getDescription();
+	}
+
+	public static List<String> listAll() {
+		List<String> names = new ArrayList<String>();
+		
+		for (EnvironmentType e: EnvironmentType.values()) {
+			names.add(e.getName());
+		}
+		
+		return names;
 	}
 	
 }
