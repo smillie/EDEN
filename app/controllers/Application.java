@@ -7,6 +7,8 @@ import model.Placeable;
 import model.components.Component;
 import model.components.ComponentFactory;
 import model.components.ComponentReviver;
+import model.resources.BasicResourceManager;
+import model.resources.ResourceType;
 import play.Logger;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -41,6 +43,13 @@ public class Application extends Controller {
 		Gson gson = new GsonBuilder().create();
 		List<String> components = ConcreteEnvironment.listAll();
 		return ok(gson.toJson(components));
+	}
+	
+	public static Result getResources() {
+		response().setHeader("Access-Control-Allow-Origin", "*");
+
+		Gson gson = new GsonBuilder().create();
+		return ok(gson.toJson(ResourceType.values()));
 	}
 
 	public static Result simulate() {
