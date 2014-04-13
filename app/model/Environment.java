@@ -8,4 +8,6 @@ public interface Environment {
 	
 	public String getDescription();
 
+	public void setEnvironment(String environmentName);
+
 }
