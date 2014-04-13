@@ -1,18 +1,19 @@
 package controllers;
 
+import model.Colony;
+import model.ConcreteEnvironment;
+import model.Environment;
 import play.Logger;
 import resources.ResourceManager;
 
 import com.google.gson.annotations.Expose;
 
-import model.Colony;
-import model.Environment;
-
 public class Simulator {
 
 	@Expose private Colony colony;
-	@Expose private Environment environment;
+	@Expose private String environmentName;
 	@Expose private ResourceManager lifeSupport;
+	private Environment environment;
 
 	
 	public Colony getColony() {
@@ -22,11 +23,11 @@ public class Simulator {
 		this.colony = colony;
 	}
 
-	public Environment getEnvironment() {
-		return environment;
+	public String getEnvironment() {
+		return environmentName;
 	}
-	public void setEnvironment(Environment environment) {
-		this.environment = environment;
+	public void setEnvironment(String environment) {
+		this.environmentName = environment;
 	}
 	public ResourceManager getLifeSupport() {
 		return lifeSupport;
@@ -35,11 +36,14 @@ public class Simulator {
 		this.lifeSupport = lifeSupport;
 	}
 	
-	public Simulator(Colony colony, Environment environment, ResourceManager lifeSupport){
+	public Simulator(Colony colony, String environment, ResourceManager lifeSupport){
 		
 		this.colony = colony;
-		this.environment = environment;
+		this.environmentName = environment;
 		this.lifeSupport = lifeSupport;
+		
+		this.environment = ConcreteEnvironment.getInstance();
+		this.environment.setEnvironment(this.environmentName);
 		
 	}
 	

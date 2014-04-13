@@ -42,7 +42,6 @@ public class ConcreteEnvironment implements Environment {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return environmentType.getDescription();
 	}
 	
