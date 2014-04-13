@@ -21,6 +21,7 @@ public abstract class AbstractComponent implements Component {
 	@Expose private final String description;
 	@Expose private final int maxHealth;
 	@Expose private int currentHealth;
+	@Expose private String __class = this.getClass().getCanonicalName();
 	
 	
 	public AbstractComponent (String name, String description, int maxHealth) {

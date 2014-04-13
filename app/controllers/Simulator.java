@@ -14,7 +14,6 @@ public class Simulator {
 	@Expose private Colony colony;
 	@Expose private ResourceManager resources;
 	@Expose private String environmentName;
-	@Expose private ResourceManager lifeSupport;
 	@Expose private Reporter reporter = Reporter.getInstance();
 	private Environment environment;
 
@@ -47,7 +46,6 @@ public class Simulator {
 		
 		this.colony = colony;
 		this.environmentName = environment;
-		this.lifeSupport = lifeSupport;
 		this.environment = ConcreteEnvironment.getInstance();
 		this.environment.setEnvironment(this.environmentName);
 		
@@ -56,13 +54,14 @@ public class Simulator {
 	public static Simulator tick(Simulator simulator, int steps) {		
 		//Setting some things...
 		simulator.setReporter();
+		Reporter.getInstance().flush();
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
-		
+				
 		//This where the real fun begins
 		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
-		
+				
 		
 		return simulator;
 	}

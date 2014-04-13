@@ -9,12 +9,12 @@ import model.components.Component;
 
 public class Colony {
 	
-	@Expose private List<Component> children;
+	@Expose private List<Component> components;
 	@Expose private String name;
 	
 	public Colony (String name) {
 		
-		children = new ArrayList<Component>();
+		components = new ArrayList<Component>();
 		this.name = (name == null) ? "colony" : name;
 		
 	}
@@ -43,12 +43,12 @@ public class Colony {
 		
 		if (parent.equals(name)) {
 			
-			reply =  children.add(component);
+			reply =  components.add(component);
 			
 		} else {
 			
 			// Pass it down the tree
-			for (Component c : children) {
+			for (Component c : components) {
 				
 				boolean childReply = c.addComponent(component, parent);
 			
@@ -67,13 +67,13 @@ public class Colony {
 	
 	public void removeComponent(Component component) {
 		
-		if(children.contains(component)) {
+		if(components.contains(component)) {
 			
-			children.remove(component);
+			components.remove(component);
 		
 		} else {
 			
-			for (Component c : children) {
+			for (Component c : components) {
 			
 				c.removeComponent(component);
 			
@@ -88,7 +88,7 @@ public class Colony {
 		
 		doTickActions(steps);
 		
-		for (Component c : children) {
+		for (Component c : components) {
 			
 			c.tick(steps);
 		

@@ -4,7 +4,9 @@ import java.util.List;
 
 import model.ConcreteEnvironment;
 import model.Placeable;
+import model.components.Component;
 import model.components.ComponentFactory;
+import model.components.ComponentReviver;
 import play.Logger;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -24,8 +26,11 @@ public class Application extends Controller {
 
 	public static Result getComponents() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
+		
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
 
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		Gson gson = gsonBuilder.setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
 		List<Placeable> components = ComponentFactory.listAll();
 		return ok(gson.toJson(components));
 	}
@@ -40,7 +45,7 @@ public class Application extends Controller {
 
 	public static Result simulate() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
-		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
+//		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
 		
 		JsonNode json = request().body().asJson();
 		if(json == null) {
@@ -49,11 +54,12 @@ public class Application extends Controller {
 
 		Logger.debug("Input: " + json.toString());
 		
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
+		Gson gson = gsonBuilder.excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
+		
 		Simulator state = gson.fromJson(json.toString(), Simulator.class);
 		
-		state.getColony().setName("Steve");
-
 		String result = gson.toJson(Simulator.tick(state, STEPS));
 		Logger.debug("Result: " + result);
 		
