@@ -57,12 +57,9 @@ public class Application extends Controller {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
 		Gson gson = gsonBuilder.excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
-
 		
 		Simulator state = gson.fromJson(json.toString(), Simulator.class);
 		
-		state.getColony().setName("Steve");
-
 		String result = gson.toJson(Simulator.tick(state, STEPS));
 		Logger.debug("Result: " + result);
 		

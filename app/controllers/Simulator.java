@@ -60,9 +60,7 @@ public class Simulator {
 		Reporter.getInstance().flush();
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
-		
-		simulator.colony.addComponent(new AeroponicsGrowingBay());
-		
+				
 		//This where the real fun begins
 		Logger.debug("Ticking simulation for " + steps + " steps.");
 		simulator.colony.tick(steps);
