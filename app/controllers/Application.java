@@ -26,8 +26,11 @@ public class Application extends Controller {
 
 	public static Result getComponents() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
+		
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.registerTypeAdapter(Component.class, new ComponentReviver());
 
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		Gson gson = gsonBuilder.setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
 		List<Placeable> components = ComponentFactory.listAll();
 		return ok(gson.toJson(components));
 	}

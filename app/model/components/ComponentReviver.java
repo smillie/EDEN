@@ -24,7 +24,7 @@ public class ComponentReviver implements JsonDeserializer<Component>, JsonSerial
 
 		JsonObject retValue = new JsonObject();
 		retValue = (JsonObject) context.serialize(src);
-		retValue.addProperty(CLASSNAME, className);
+//		retValue.addProperty(CLASSNAME, className);
 		return retValue;
 	}
 

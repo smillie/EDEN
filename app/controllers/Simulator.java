@@ -61,8 +61,6 @@ public class Simulator {
 		simulator.environment = ConcreteEnvironment.getInstance();
 		simulator.environment.setEnvironment(simulator.environmentName);
 		
-		Reporter.getInstance().record("a", "");
-		Reporter.getInstance().record("b", "");
 		simulator.colony.addComponent(new AeroponicsGrowingBay());
 		
 		//This where the real fun begins
