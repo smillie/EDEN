@@ -12,13 +12,13 @@ public enum Material {
 	AERO_BED_IN  (1,  60,  0,  1,   1,   120, 0),
 	AERO_BED_OUT (60, 0,   60, 0,   0,   60,  0);
 	
-	int biomass;
-	int co2;
-	int o2;
-	int minerals;
-	int power;
-	int h2o;
-	int waste;
+	public int biomass;
+	public int co2;
+	public int o2;
+	public int minerals;
+	public int power;
+	public int h2o;
+	public int waste;
 	
 	private Material (int bio, int co2, int o2, int rok, int pwr, int h2o, int waste) {
 		

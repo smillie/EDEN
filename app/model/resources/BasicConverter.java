@@ -18,15 +18,18 @@ public class BasicConverter implements ResourceConverter {
 	}
 	
 	@Override
-	public void convert(int percentOfMaximum) {
+	public boolean convert(int percentOfMaximum) {
 		
 		boolean available = checkResourcesAvailbility(percentOfMaximum);
 		
 		if (available) {
 			
 			doConversions(percentOfMaximum);
-		
+			return true;
+			
 		}
+		
+		return false;
 
 	}
 	

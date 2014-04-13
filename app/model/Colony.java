@@ -6,11 +6,20 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 
 import model.components.Component;
+import model.resources.BasicConverter;
+import model.resources.BasicResourceManager;
+import model.resources.ResourceConverter;
+import model.resources.ResourceManager;
+
+import static model.resources.Material.*;
 
 public class Colony {
 	
 	@Expose private List<Component> components;
 	@Expose private String name;
+	@Expose private int population;
+	private ResourceManager resources = BasicResourceManager.getInstance();
+	ResourceConverter personConverter = new BasicConverter(PERSON_IN, PERSON_OUT);
 	
 	public Colony (String name) {
 		
@@ -98,6 +107,37 @@ public class Colony {
 	
 	
 	private void doTickActions (int steps) {
+		
+		for (int i = 0; i < steps; i++) {
+		
+			int supported = doPopulationConsumption (population);
+			
+			if (population > supported) {
+				
+				population = supported + ((population-supported)/2);
+				
+			}
+	
+		}
+		
+		
+	
+	}
+	
+	
+	private int doPopulationConsumption (int pop) {
+		
+		int persisted = 0;
+		
+		for (int i = 0; i < pop; i++) {
+			
+			if (personConverter.convert(100)) {
+				persisted++;
+			}
+			
+		}
+		
+		return persisted;
 		
 	}
 	
