@@ -2,6 +2,6 @@ package model.resources;
 
 public interface ResourceConverter {
 
-	public void convert(int percentOfMaximum);
+	public boolean convert(int percentOfMaximum);
 	
 }
