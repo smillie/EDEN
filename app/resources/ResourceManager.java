@@ -3,6 +3,10 @@ package resources;
 
 public interface ResourceManager {
 	
-	int getResource(int amount, ResourceType resource);
+	void addResources(int amount, ResourceType resource);
+	
+	int takeResources(int amount, ResourceType resource);
+
+	int checkLevel(ResourceType biomass);
 	
 }

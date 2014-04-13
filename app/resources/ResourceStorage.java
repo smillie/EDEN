@@ -45,4 +45,22 @@ public class ResourceStorage {
 		}
 	
 	}
+	
+	
+	public int takeResource (int amount) {
+		
+		if (amount <= count) {
+			
+			count -= amount;
+			return amount;
+			
+		} else {
+			
+			count = 0;
+			return amount;
+			
+		}
+		
+	}
+	
 }

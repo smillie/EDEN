@@ -1,6 +1,7 @@
 package resources;
 
 import java.util.Map;
+import java.util.HashMap;
 
 public class BasicResourceManager implements ResourceManager{
 	
@@ -9,6 +10,8 @@ public class BasicResourceManager implements ResourceManager{
 
 	
 	private BasicResourceManager () {
+		
+		resourceMap = new HashMap<ResourceType, ResourceStorage>();
 		
 		for (ResourceType type : ResourceType.values()) {
 			
@@ -33,15 +36,32 @@ public class BasicResourceManager implements ResourceManager{
 
 	
 	@Override
-	public int getResource(int amount, ResourceType resource) {
+	public int takeResources(int amount, ResourceType resource) {
 		
 		if(resourceMap.containsKey(resource)) {
 			
-			return resourceMap.get(resource).getCount();
+			return resourceMap.get(resource).takeResource(amount);
 			
 		}
 		
 		return 0;
+		
+	}
+
+
+	@Override
+	public void addResources(int amount, ResourceType resource) {
+
+		resourceMap.get(resource).addResource(amount);
+		
+	}
+
+
+	@Override
+	public int checkLevel(ResourceType resource) {
+
+		return resourceMap.get(resource).getCount();
+		
 	}
 	
 }
