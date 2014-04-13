@@ -2,6 +2,7 @@ package model.resources;
 
 	// TODO - if extending this system - construct the resource list using reflection
 
+@SuppressWarnings("unused")
 public enum ResourceType {
 	
 	BIOMASS ("Food", "Stored rations, Manufactured chemical suppliments and grown produce"),
@@ -11,6 +12,7 @@ public enum ResourceType {
 	POWER ("Energy", "Electrical power available to do work"),
 	WATER ("Water", "Mostly wet, most of the time"),
 	WASTE ("Waste", "Material that might be recyclable");
+	
 	
 	private String name;
 	private String description;

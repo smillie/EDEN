@@ -40,6 +40,8 @@ public class Application extends Controller {
 
 	public static Result simulate() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
+		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
+		
 		JsonNode json = request().body().asJson();
 		if(json == null) {
 			return badRequest();
@@ -47,7 +49,7 @@ public class Application extends Controller {
 
 		Logger.debug("Input: " + json.toString());
 		
-		Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
 		Simulator state = gson.fromJson(json.toString(), Simulator.class);
 		
 		state.getColony().setName("Steve");

@@ -1,7 +1,6 @@
 package model.components;
 
 import model.Placeable;
-import model.resources.Resource;
 import model.resources.ResourceType;
 
 public class InflatableGreenhouse extends AbstractGreenhouse implements Placeable {
