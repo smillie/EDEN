@@ -56,7 +56,7 @@ public class Application extends Controller {
 
 	public static Result simulate() {
 		response().setHeader("Access-Control-Allow-Origin", "*");
-		response().setHeader("Access-Control-Allow-Methods", "GET, POST");
+		response().setHeader("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
 		
 		JsonNode json = request().body().asJson();
 		if(json == null) {
@@ -78,6 +78,14 @@ public class Application extends Controller {
 		
 		return ok(result);
 
+	}
+
+	public static Result checkCors(String endpoint) {
+		response().setHeader("Access-Control-Allow-Origin", "*");       // Need to add the correct domain in here!!
+		response().setHeader("Access-Control-Allow-Methods", "POST");   // Only allow POST
+		response().setHeader("Access-Control-Max-Age", "300");          // Cache response for 5 minutes
+		response().setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");         // Ensure this header is also allowed!  
+		return ok();
 	}
 
 
