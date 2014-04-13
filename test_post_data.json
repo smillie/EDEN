@@ -1,0 +1,46 @@
+{
+  "colony": {
+    "components": [
+      {
+        "childComponents": [],
+        "name": "Aeroponics Growing Bay",
+        "description": "wibble",
+        "maxHealth": 123,
+        "currentHealth": 123,
+        "__class": "model.components.AeroponicsGrowingBay"
+      }
+    ],
+    "name": "Bob",
+    "population": 0
+  },
+  "resources": {
+    "resourceMap": {
+      "CARBON_DIOXIDE": {
+        "count": 0
+      },
+      "WASTE": {
+        "count": 0
+      },
+      "WATER": {
+        "count": 0
+      },
+      "OXYGEN": {
+        "count": 5
+      },
+      "MINERALS": {
+        "count": 0
+      },
+      "POWER": {
+        "count": 2342342343
+      },
+      "BIOMASS": {
+        "count": 0
+      }
+    }
+  },
+  "environmentName": "Moon",
+  "reporter": {
+    "events": []
+  }
+}
+
