@@ -4,37 +4,37 @@
       {
         "childComponents": [],
         "name": "Aeroponics Growing Bay",
-        "description": "wibble",
-        "maxHealth": 123,
-        "currentHealth": 123,
+        "description": "Plands growing in vapour or air",
+        "maxHealth": 30,
+        "currentHealth": 30,
         "__class": "model.components.AeroponicsGrowingBay"
       }
     ],
-    "name": "Bob",
-    "population": 0
+    "name": "MoonBaseAlpha",
+    "population": 3
   },
   "resources": {
     "resourceMap": {
       "CARBON_DIOXIDE": {
-        "count": 0
+        "count": 20
       },
       "WASTE": {
-        "count": 0
+        "count": 10
       },
       "WATER": {
-        "count": 0
+        "count": 106
       },
       "OXYGEN": {
-        "count": 5
+        "count": 75
       },
       "MINERALS": {
-        "count": 0
+        "count": 37
       },
       "POWER": {
         "count": 2342342343
       },
       "BIOMASS": {
-        "count": 0
+        "count": 59
       }
     }
   },
