@@ -4,7 +4,7 @@
       {
         "childComponents": [],
         "name": "Aeroponics Growing Bay",
-        "description": "Plands growing in vapour or air",
+        "description": "Plants growing in vapour or air",
         "maxHealth": 30,
         "currentHealth": 30,
         "__class": "model.components.AeroponicsGrowingBay"
